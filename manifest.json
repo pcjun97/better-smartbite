@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Better SmartBite",
+  "description": "SmartBite is good, but it can be better",
+  "version": "1.0",
+  "action": {
+    "default_icon": "smartbite.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["main.user.js"],
+      "matches": ["https://canteen.trysmartbite.com/*"]
+    }
+  ]
+}
