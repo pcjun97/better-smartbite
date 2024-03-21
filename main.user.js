@@ -10,6 +10,9 @@
 // ==/UserScript==
 
 (function () {
+  let last = 0;
+  let url = document.location.href;
+
   window.addEventListener("load", function () {
     track();
   });
@@ -19,44 +22,30 @@
   });
 
   navigation.addEventListener("navigatesuccess", () => {
-    if (url === "https://canteen.trysmartbite.com/restaurants") {
-      clickTheLast();
+    if (url == "https://canteen.trysmartbite.com/restaurants") {
       track();
     }
   });
 
-  let last = null;
-  let url = document.location.href;
-
   function track() {
-    const buttons = getDaysButtons();
-
-    let i = 0;
-    for (const button of buttons) {
-      const j = i;
-      button.addEventListener("click", () => {
-        last = j;
-      });
-      i++;
-    }
-  }
-
-  function clickTheLast() {
-    const buttons = getDaysButtons();
-    buttons[last].click();
-  }
-
-  function getDaysButtons() {
-    const buttons = document.getElementsByTagName("button");
-
-    let daysButtons = [];
-    for (const button of buttons) {
+    let buttons = [];
+    for (const button of document.getElementsByTagName("button")) {
+      // days buttons has no id
       if (!button.id) {
-        daysButtons.push(button);
+        buttons.push(button);
       }
     }
-    daysButtons = daysButtons.slice(1);
 
-    return daysButtons;
+    // first button is something else
+    buttons = buttons.slice(1);
+
+    // the magic happens here
+    buttons[last].click();
+
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", () => {
+        last = i;
+      });
+    }
   }
 })();
