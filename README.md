@@ -7,7 +7,9 @@ Now back means back! (instead of homepage)
 
 ## Chrome Extension
 
-To install this fix as a chrome extension, clone this repo and follow the instructions here:
+To install this fix as a chrome extension,
+clone this repo or [download the zip](https://github.com/pcjun97/better-smartbite/archive/refs/tags/v1.0.0.zip)
+and follow the instructions here:
 https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked
 
 ## Tampermonkey
