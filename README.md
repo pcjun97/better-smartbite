@@ -2,15 +2,17 @@
 
 SmartBite is good, but it can be better.
 
-This chrome plugin/tampermonkey script fixes navigation issue in SmartBite by remembering the most recently browsed day.
-Now back means back! (instead of homepage)
+The script in this repo fixes navigation issue in SmartBite by remembering the most recently browsed day.
+Now "Go back" actually means going back!
 
 ## Chrome Extension
 
-To install this fix as a chrome extension,
+To install this fix as a Chrome extension,
 clone this repo or [download the zip](https://github.com/pcjun97/better-smartbite/archive/refs/tags/v1.0.0.zip)
 and follow the instructions here:
 https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked
+
+(Works on Edge and Brave, too!)
 
 ## Tampermonkey
 
